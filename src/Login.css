@@ -1,0 +1,25 @@
+/* src/Login.css */
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+    color: #fff;
+  }
+  
+  .login h1 {
+    margin-bottom: 20px;
+  }
+  
+  .login button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  

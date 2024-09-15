@@ -1,0 +1,58 @@
+/* Navbar.css */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 20px;
+    z-index: 1;
+    transition: all 0.5s ease;
+  }
+  
+  .navbar__black {
+    background-color: #111;
+  }
+  
+  .navbar__contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar__logo {
+    width: 80px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  
+  .navbar__links {
+    display: flex;
+    flex: 1;
+    margin-left: 20px;
+  }
+  
+  .navbar__links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 14px;
+  }
+  
+  .navbar__icons {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar__icons i {
+    color: white;
+    font-size: 18px;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .navbar__avatar {
+    width: 30px;
+    object-fit: contain;
+    cursor: pointer;
+  }
+  

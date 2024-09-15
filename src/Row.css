@@ -1,0 +1,68 @@
+.row {
+  position: relative;
+  margin-left: 20px;
+  color: #fff;
+}
+
+.row h2 {
+  margin-left: 20px;
+}
+
+.row_container {
+  position: relative;
+}
+
+.row_posters {
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 20px;
+  scrollbar-width: none; /* Para navegadores Firefox */
+}
+
+.row_posters::-webkit-scrollbar {
+  display: none; /* Para navegadores WebKit (Chrome, Safari, Opera) */
+}
+
+.row_poster {
+  max-height: 200px;
+  margin-right: 10px;
+  transition: transform 450ms;
+}
+
+.row_poster:hover {
+  transform: scale(1.08);
+}
+
+.row_posterLarge {
+  max-height: 250px;
+}
+
+.row_posterLarge:hover {
+  transform: scale(1.09);
+}
+
+.row_arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+}
+
+.row_arrow:hover {
+  opacity: 1;
+}
+
+.row_arrow.left {
+  left: 0;
+}
+
+.row_arrow.right {
+  right: 0;
+}
