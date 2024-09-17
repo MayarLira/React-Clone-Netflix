@@ -1,4 +1,3 @@
-/* Navbar.css */
 
 .navbar {
     position: fixed;
@@ -53,6 +52,13 @@
   .navbar__avatar {
     width: 30px;
     object-fit: contain;
+    cursor: pointer;
+  }
+
+  .navbar__icons i {
+    color: white;
+    font-size: 18px;
+    margin-right: 20px;
     cursor: pointer;
   }
   

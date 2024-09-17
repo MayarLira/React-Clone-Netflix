@@ -9,8 +9,9 @@ function Login({ onLogin }) {
 
   return (
     <div className="login">
-      <h1>Bem-vindo à Netflix</h1>
-      <button onClick={handleLogin}>Entrar</button>
+      <h1>Filmes, Séries e muito mais. Sem limites.</h1>
+      <h3>Assista onde quiser. Cancele quando quiser.</h3>
+      <button onClick={handleLogin}> Vamos lá  > </button>
     </div>
   );
 }

@@ -1,11 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
-import axios from './axios';
-import './Row.css';
+import React, { useEffect, useRef, useState } from 'react';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import axios from './axios';
+import Modal from './Modal'; // Componente Modal para exibir informações detalhadas
+import './requests';
+import './Row.css';
 
-function Row({ title, fetchUrl,isLargeRow }) {
+function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null); // Armazena o filme selecionado para exibir no modal
   const base_url = 'https://image.tmdb.org/t/p/w200';
+  const API_KEY_ROW = "9bb7ebee57ce8bcab2b53bde32862453";
+
 
   const rowRef = useRef(null);
 
@@ -33,6 +38,20 @@ function Row({ title, fetchUrl,isLargeRow }) {
     });
   };
 
+  // Função para buscar detalhes do filme ou série quando o usuário clica na imagem
+  const handleClick = async (movie) => {
+    try {
+      // Chamada à API do TMDB para buscar mais detalhes do filme/série
+      const request = await axios.get(
+        `/movie/${movie.id}?api_key=${API_KEY_ROW}&language=pt-BR`
+      );
+      // Armazena os detalhes do filme ou série no estado
+      setSelectedMovie(request.data);
+    } catch (error) {
+      console.error("Erro ao buscar os detalhes do filme:", error);
+    }
+  };
+
   return (
     <div className="row">
       <h2>{title}</h2>
@@ -50,12 +69,17 @@ function Row({ title, fetchUrl,isLargeRow }) {
                     isLargeRow ? movie.poster_path : movie.backdrop_path
                   }`}
                   alt={movie.title || movie.name}
+                  onClick={() => handleClick(movie)} // Ao clicar, busca detalhes do filme
                 />
               )
           )}
         </div>
         <MdChevronRight className="row_arrow right" onClick={scrollRight} />
       </div>
+
+      {selectedMovie && (
+        <Modal movie={selectedMovie} onClose={() => setSelectedMovie(null)} />
+      )}
     </div>
   );
 }
