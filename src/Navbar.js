@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navbar.css';
 
 function Navbar() {
@@ -29,9 +29,15 @@ function Navbar() {
           <a href="/">Minha Lista</a>
         </div>
 
+        <div className="navbar__search">
+          <input type="text" placeholder="Pesquisar" className="navbar__searchInput" />
+          <button className="navbar__searchButton">
+            <i className="fas fa-search"></i>
+          </button>
+        </div>
+
         <div className="navbar__icons">
-          <i className="fas fa-search"></i>
-          <i className="fas fa-bell"></i>
+          
           <img
             className="navbar__avatar"
             src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"

@@ -1,10 +1,12 @@
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useState } from 'react';
-import Row from './Row';
-import Banner from './Banner';
-import Navbar from './Navbar';
-import Login from './Login';
-import requests from './requests';
 import './App.css';
+import Banner from './Banner';
+import Footer from './Footer';
+import Login from './Login';
+import Navbar from './Navbar';
+import requests from './requests';
+import Row from './Row';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -23,6 +25,7 @@ function App() {
           <Row title="Romance" fetchUrl={requests.fetchRomance} />
           <Row title="Terror" fetchUrl={requests.fetchHorror} />
           <Row title="Documentários" fetchUrl={requests.fetchDocumentary} />
+          <Footer />
         </>
       )}
     </div>
